@@ -1,0 +1,60 @@
+Table 1: Effect of Vbias1 without stacking keeping Vbias2 fixed at 0.9 V and Vdc at 1.6 V
+Vbias1 (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+0.8	522.725	19.9927	-62.5003
+0.9	527.45	20.1041	-63.1472
+1	530.357	20.1732	-63.2282
+1.1	532.303	20.22	-63.1244
+1.2	533.671	20.255	-63.1329
+1.3	534.659	20.2802	-63.131
+1.4	535.385	20.2989	-61.1292
+1.5	535.922	20.3129	-61.1278
+
+
+Table 2: Effect of Vbias1 with stacking keeping Vbias2 fixed at 0.9 V and Vdc at 1.6 V
+
+Vbias1 (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+0.9	407.674	19.98	-56.6504
+1	445.508	19.491	-58.9723
+1.1	463.499	19.459	-59.6751
+1.2	473.856	19.479	-59.9704
+1.3	480.581	19.5045	-60.1352
+1.4	485.228	19.526	-60.2406
+1.5	488.549	19.547	-60.3097
+
+
+
+
+Table 3: Effect of Vbias 2 without stacking keeping Vbias1 fixed at 0.9 V and Vdc at 1.6 V
+Vbias2 (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+0.8	661.729	22.7939	-62.2713
+0.9	527.45	20.1041	-63.1472
+1	387.352	17.4574	-63.051
+1.1	253.759	14.2591	-61.4196
+1.2	137.215	10.1164	-61.7157
+1.3	50.8654	5.14366	-60.2781
+
+Table 4: Effect of Vbias2 with stacking keeping Vbias1 fixed at 0.9 V and Vdc at 1.6 V
+Vbias2 (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+0.9	407.674	19.98	-56.6504
+1	338.339	15.8512	-61.2348
+1.1	232.055	13.1386	-61.1897
+1.2	129.136	9.49416	-61.2515
+1.3	49.1748	4.9263	-60.0427
+1.4	9.2248	1.3022	-62.2013
+
+Table 5: Effect of Vdc without stacking keeping Vbias1 and Vbias2 fixed at 0.9 V
+Vdc (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+1.2	21.7079	3.25974	-62.523
+1.3	86.0012	8.41866	-62.1545
+1.4	196.985	13.2592	-61.5721
+1.5	346.625	17.066	-61.2934
+1.6	527.45	20.1041	-63.1472
+
+Table 6: Effect of Vdc with stacking keeping Vbias1 and Vbias2 fixed at 0.9 V
+Vdc (V)	Power (µW)	Frequency (GHz)	Phase Noise (dBc/Hz)
+1.2	21.2592	3.15371	-63.0321
+1.3	81.9662	7.96827	-61.7326
+1.4	181.942	12.3419	-61.1577
+1.5	304.282	15.711	-60.9809
+1.6	407.674	19.98	-56.6504
+%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20edge%3D%221%22%20parent%3D%221%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3Brounded%3D0%3B%22%20value%3D%22%22%3E%3CmxGeometry%20height%3D%2250%22%20relative%3D%221%22%20width%3D%2250%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22170%22%20y%3D%22227.66%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22230%22%20y%3D%22227.66%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E
