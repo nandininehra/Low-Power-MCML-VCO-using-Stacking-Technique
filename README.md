@@ -146,7 +146,6 @@ Oscillation condition is satisfied by achieving **360° phase shift** across sta
 
 * High-speed analog circuit design using MCML
 * Power optimization using stacking (current reuse)
-* Trade-offs between power, speed, and voltage headroom
 * Importance of simulation-driven design validation
 
 ---
