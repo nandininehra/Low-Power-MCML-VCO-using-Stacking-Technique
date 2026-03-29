@@ -1,180 +1,106 @@
-# MCML-Based Low Power Ring VCO with Stacking Technique (90nm Cadence Design)
+# Low-Power MCML VCO using Stacking Technique
 
-## Overview
+## 📌 Overview
 
-This project presents the design and analysis of a **MOS Current Mode Logic (MCML) based Ring Voltage Controlled Oscillator (VCO)** implemented using **Cadence Virtuoso (GPDK 90nm technology)**.
-
-A **stacking technique** is introduced to reduce static power consumption while maintaining high-frequency performance.
-
-### Key Achievements
-
-* Achieved **~23% reduction in power consumption** using stacking
-* Operating frequency up to **~20 GHz**
-* Improved stability with controlled **phase noise (~ -63 dBc/Hz)**
-* Verified using **Transient, PSS, and PNOISE simulations**
+This project presents the design and simulation of a low-power Voltage Controlled Oscillator (VCO) using MOS Current Mode Logic (MCML) with a stacking technique. The design focuses on achieving high-speed operation with reduced power consumption, making it suitable for high-frequency analog and mixed-signal applications such as PLLs and communication systems.
 
 ---
 
-## Key Concepts Used
+## 🎯 Objectives
 
-* MCML (MOS Current Mode Logic)
-* Differential Pair Design
-* Ring Oscillator Architecture
-* Voltage Controlled Oscillation
-* Bias-controlled tuning (Vbias1, Vbias2)
-* Stacking Technique for Low Power Design
-* Phase Noise Analysis (PSS & PNOISE)
+* Design a high-speed VCO using MCML topology
+* Reduce power consumption using stacking (current reuse) technique
+* Analyze oscillation behavior through simulation
+* Study trade-offs between power, speed, and voltage headroom
 
 ---
 
-## Circuit Description
+## ⚙️ Design Methodology
 
-* Designed a **3-stage ring oscillator** using MCML inverters
-* Each stage consists of:
+### 🔹 MCML Logic
 
-  * NMOS differential pair
-  * PMOS load transistors
-  * Tail current source
+MCML (MOS Current Mode Logic) operates using constant current biasing and differential signaling. It offers:
 
-### Control Parameters
+* Low voltage swing
+* Faster switching speed
+* Reduced noise sensitivity
 
-* **Vbias1** → controls tail current
-* **Vbias2** → controls load resistance
-* **Vdc** → supply voltage (1.6V)
-
-The output of the last stage is fed back to the first stage to sustain oscillations.
+These properties make MCML suitable for high-speed circuit design compared to conventional CMOS logic.
 
 ---
 
-## Working Principle
+### 🔹 Stacking Technique
 
-* Oscillation satisfies **Barkhausen Criteria**:
-
-  * Loop gain ≥ 1
-  * Total phase shift = 360°
-
-* Frequency of oscillation:
-
-[
-f = \frac{1}{2 N t_d}
-]
-
-where:
-
-* N = number of stages
-* td = delay per stage
+The stacking technique is used to improve power efficiency by enabling current reuse across multiple transistors. This reduces overall power consumption while maintaining high-speed performance. However, stacking introduces reduced voltage headroom, requiring careful biasing and design considerations.
 
 ---
 
-## Stacking Technique (Proposed Work)
+## 🧩 Circuit Description
 
-The major drawback of MCML circuits is **high static power consumption** due to constant bias current.
+The designed VCO consists of differential MCML stages forming a feedback loop to sustain oscillations. The circuit includes:
 
-### Solution:
+* Differential pair transistors
+* Constant current source for biasing
+* Load resistors / active loads
+* Feedback path for oscillation generation
 
-* Introduced an **additional NMOS transistor in series** with tail current source
-* This increases effective resistance → reduces current → reduces power
-
-[
-P = V \cdot I
-]
-
- Lower current directly reduces power consumption.
+The oscillation frequency depends on circuit parameters such as bias current and effective capacitance.
 
 ---
 
-## 📊 Results Summary
+## 📊 Results and Analysis
 
-### 🔹 Power Comparison
+The circuit was simulated to observe oscillatory behavior and evaluate performance.
 
-| Design                | Power (µW) at Vdc = 1.6V |
-| --------------------- | ------------------------ |
-| Conventional MCML VCO | ~527 µW                  |
-| With Stacking         | ~407 µW                  |
-
-✅ **~23% power reduction achieved**
+* Stable oscillations were obtained at the output
+* MCML topology enabled high-speed switching due to reduced voltage swing
+* Stacking technique helped in lowering power consumption through current reuse
+* The design demonstrates improved efficiency compared to conventional approaches
 
 ---
 
-### 🔹 Frequency Performance
+## 📈 Simulation Results
 
-* Maximum frequency: **~19.98 GHz**
-* Frequency increases with **Vdc**
-* Frequency decreases with **Vbias2** (due to increased load resistance)
+### Output Waveform
 
----
+The output waveform shows sustained oscillations, confirming correct VCO operation.
 
-### 🔹 Phase Noise Performance
+### Frequency Behavior
 
-* Best phase noise: **~ -63 dBc/Hz**
-* At max frequency (~20 GHz): **~ -56 dBc/Hz**
-* Improved stability at lower frequencies
+The oscillation frequency is controlled by biasing conditions and circuit parameters, demonstrating tunable behavior.
 
 ---
 
-##  Analysis Performed
+## 🔄 Comparison with Conventional Design
 
-### 🔸 Power Analysis
-
-* Power vs Vbias1
-* Power vs Vbias2
-* Power vs Vdc
-* Comparison: With vs Without Stacking
+| Parameter         | Conventional CMOS VCO | MCML VCO (Proposed) |
+| ----------------- | --------------------- | ------------------- |
+| Power Consumption | Higher                | Lower               |
+| Speed             | Moderate              | High                |
+| Voltage Swing     | High                  | Low                 |
+| Efficiency        | Lower                 | Improved            |
 
 ---
-##  Simulation Details
 
-* Technology: **GPDK 90nm**
-* Tool: **Cadence Virtuoso**
-* Supply Voltage: **1.6 V**
-
-### Analyses Performed:
-
-* Transient Analysis → Oscillation verification
-* PSS (Periodic Steady State) → Stable oscillation
-* PNOISE → Phase noise evaluation
-
-
-##  Key Observations
-
-* Power increases with **Vbias1** due to increased current
-* Power decreases with **Vbias2** due to increased load resistance
-* Power increases significantly with **Vdc**
-* Stacking technique consistently reduces power across all conditions
-
-
-## Future Work
-
-* Layout design and post-layout simulation
-* Further power optimization techniques
-
-
-## Tools Used
+## 🛠️ Tools Used
 
 * Cadence Virtuoso
-* Analog Design Environment (ADE)
-* GPDK 90nm Technology
+* Spectre Simulator
+* Analog Circuit Design Techniques
 
 ---
 
-##  Documentation
+## 🚀 Key Learnings
 
-Detailed explanation available in:
-📂 `docs/MCML_VCO_Paper.pdf`
-
----
-
-## Author
-
-**Nandini Nehra**
-Electronics Engineering Student
-Interest: Analog IC Design | VLSI | Semiconductor Devices
+* Understanding of high-speed analog circuit design
+* Implementation of MCML logic in oscillator design
+* Importance of current reuse techniques for power optimization
+* Trade-offs between power, speed, and voltage headroom
 
 ---
 
-## ⭐ Project Highlight
+## 📌 Conclusion
 
-**Designed and analyzed a high-frequency (~20 GHz) MCML VCO with reduced power consumption using stacking technique, validated through Cadence simulations (PSS & PNOISE).**
+A low-power MCML-based VCO using stacking technique was successfully designed and simulated. The circuit demonstrates high-speed operation with improved power efficiency, making it suitable for modern high-frequency integrated circuit applications.
 
 ---
-
