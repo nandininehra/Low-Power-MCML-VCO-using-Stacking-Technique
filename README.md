@@ -99,8 +99,69 @@ The oscillation frequency is controlled by biasing conditions and circuit parame
 
 ---
 
+## 📊 Results and Analysis
+
+The performance of the MCML VCO was evaluated using transient, power, frequency, and phase noise analysis. A comparative study between conventional MCML VCO and the proposed stacking-based MCML VCO was performed.
+
+---
+
+### 🔸 Transient Analysis
+
+The transient response of the MCML VCO exhibits a stable periodic waveform, confirming sustained oscillations. The design satisfies the oscillation condition (Barkhausen criteria), ensuring reliable operation for both conventional and stacking configurations.
+
+---
+
+### 🔸 Power Analysis
+
+The power consumption of the VCO was analyzed with respect to biasing voltages and supply voltage.
+
+* Increasing **Vbias1** increases power consumption due to higher tail current in both designs.
+* Increasing **Vbias2** significantly reduces power consumption due to variation in load conditions.
+* Increasing **Vdc (supply voltage)** leads to a sharp increase in power consumption.
+
+The proposed stacking technique demonstrates **significant power reduction** compared to the conventional MCML design:
+
+* At **Vdc = 1.6 V**, power reduces from **~527 µW (without stacking)** to **~407 µW (with stacking)**
+* This corresponds to an approximate **23% reduction in power consumption**
+
+This reduction is achieved due to **current reuse in stacked transistors**, leading to improved power efficiency.
+
+---
+
+### 🔸 Frequency and Tuning Analysis
+
+The oscillation frequency was analyzed with respect to bias voltages and supply voltage.
+
+* Maximum frequency achieved: **~19.98 GHz at Vdc = 1.6 V**
+* Increasing **Vdc** increases frequency due to reduced propagation delay
+* Increasing **Vbias2** reduces frequency due to increased effective load resistance
+* **Vbias1** has minimal effect on frequency due to trade-off between current increase and voltage swing
+
+The VCO demonstrates **wide frequency tuning capability**, making it suitable for high-frequency applications.
+
+---
+
+### 🔸 Phase Noise Analysis
+
+Phase noise performance was evaluated to assess spectral stability.
+
+* At maximum frequency (~19.98 GHz), phase noise ≈ **-56.65 dBc/Hz**
+* Best phase noise observed: **~ -63.03 dBc/Hz at Vdc = 1.2 V**
+* Phase noise improves as frequency decreases, indicating better stability at lower operating frequencies
+
+The results confirm that the proposed design maintains **acceptable phase noise performance** for practical applications.
+
+---
+
 ## 📌 Conclusion
 
-A low-power MCML-based VCO using stacking technique was successfully designed and simulated. The circuit demonstrates high-speed operation with improved power efficiency, making it suitable for modern high-frequency integrated circuit applications.
+A low-power MCML-based Voltage Controlled Oscillator using stacking technique was successfully designed and analyzed. The proposed design achieves **high-speed operation (~20 GHz)** while significantly reducing power consumption through current reuse.
+
+The stacking technique provides an approximate **23% reduction in power consumption** compared to conventional MCML VCO, without compromising oscillation stability. The design also demonstrates good frequency tunability and acceptable phase noise characteristics.
+
+Overall, the proposed MCML VCO offers an effective solution for **low-power, high-frequency applications** such as PLLs and communication systems, highlighting the advantages of MCML logic combined with stacking techniques.
+
+---
+
 
 ---
